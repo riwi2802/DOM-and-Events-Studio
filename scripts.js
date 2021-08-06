@@ -2,11 +2,12 @@
 // Remember to pay attention to page loading!
 
 window.addEventListener('load', function () {
-    const flightStatus = document.getElementById('flightStatus');
     const takeOffButton = document.getElementById('takeoff');
+    const landButton = document.getElementById('landing')
+
+    const flightStatus = document.getElementById('flightStatus');
     const shuttleBackground = document.getElementById('shuttleBackground')
     const shuttleHeight = document.getElementById('spaceShuttleHeight')
-
 
 
     takeOffButton.addEventListener('click', function() {
@@ -17,5 +18,13 @@ window.addEventListener('load', function () {
             shuttleHeight.innerHTML = "10,000"
 
         }
+
+    })
+
+    landButton.addEventListener('click', function() {
+        window.alert("The shuttle is landing. Landing gear engaged.")
+        flightStatus.innerText = "The shuttle has landed."
+        shuttleBackground.style.backgroundColor = '#34ff70';
+        shuttleHeight.innerHTML = "0"
     })
 });
